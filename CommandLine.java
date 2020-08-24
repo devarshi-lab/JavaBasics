@@ -1,8 +1,8 @@
 /*
  Write a java program which accept one word from user through command line and
-display length of that word.
- java Demo Hello
- Output : Length is 5 
+display length of maximum length word.
+ java Demo Hello Marvellous Demo
+ Output : Maximum Length is 10 
  */
 
 import java.lang.*;

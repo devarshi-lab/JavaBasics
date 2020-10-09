@@ -10,6 +10,21 @@ class Searching extends MyArray
 		super(size);
 	}
 
+	public boolean ChkSorted()
+	{
+		boolean flag = true;
+
+		for(int i=0;i<(arr.length-1);i++)
+		{
+			if(arr[i+1]<arr[i])
+			{
+				flag = false;
+				break;
+			}
+		}
+
+		return flag;
+	}
 	public boolean BinarySearch(int no)		//Binary search
 	{
 		int start = 0,middle = 0,end = (arr.length-1);
@@ -33,7 +48,7 @@ class Searching extends MyArray
 				end = middle-1;
 			}
 		}
-
+			
 		return flag;
 	}
 }
@@ -47,18 +62,24 @@ class BinarySearch
 
 		Searching obj = new Searching(iNo);
 		obj.Accept();
-		obj.Display();
 
 		System.out.print("Enter the element u want to search : \t");
 		int no = input.nextInt();
 
-		if(obj.BinarySearch(no))
+		if(obj.ChkSorted())
 		{
-			System.out.println("Element is in array");
+			if(obj.BinarySearch(no))
+			{
+				System.out.println("Element is in array");
+			}
+			else
+			{
+				System.out.println("Element Not Found");
+			}
 		}
 		else
 		{
-			System.out.println("Element Not Found");
+			System.out.println("Error : Array is not sorted...");
 		}
 	}
 }
